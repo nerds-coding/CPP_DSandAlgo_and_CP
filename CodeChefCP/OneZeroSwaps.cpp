@@ -2,34 +2,61 @@
 using namespace std;
 
 #define ll long long
+#define fr(i,n) for(i = 0;i<n;i++)
 
 int main(){
+
     ll t;
     cin>>t;
     while(t--){
-        ll n;
+        ll n,zeros,ones;
+        int i;
         cin>>n;
-        char s[100000],p[100000];
-        cin>>s>>p;
+        char s[n];
+        char p[n];
 
-        int Scounter,pCounter=0;
-        for(int i =0;s[i]!='\0';i++){
-            if(s[i]=='0'){
-                Scounter++;
-            }
-            if(p[i]=='0'){
-                pCounter++;
+        fr(i,n){
+            cin>>s[i];
+        }
+        fr(i,n){
+            cin>>p[i];
+        }
+
+        fr(i,n){
+            if(s[i]!=p[i]){
+                if(s[i]=='0'){
+                    zeros+=1;
+                }else{
+                    ones+=1;
+                }
             }
         }
 
-        if(pCounter!=Scounter){
+        if(zeros!=ones){
             cout<<"No"<<endl;
-        }else{
-            cout<<"Yes"<<endl;
+            continue;
         }
-        Scounter=pCounter=0;
+
+        int c1=0;
+        bool flag = true;
+        fr(i,n){
+            if(s[i]!=p[i]){
+                if(s[i]=='0'){
+                    if(c1>0){
+                        c1--;
+                    }else{
+                        flag = false;
+                        break;
+                    }
+                }else{
+                    c1++;
+                }
+            }
+        }
+
+        cout<<((!flag)? "No":"Yes")<<endl;
+
     }
 
-
-    return 0;
+    return 0 ;
 }
