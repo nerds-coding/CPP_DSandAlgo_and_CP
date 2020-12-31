@@ -2,32 +2,24 @@
 using namespace std;
 
 #define ll long long
-#define fr(i,n) for(i = 0;i<n;i++)
-
+//1100 = s
+//0011 = p
 int main(){
-
     ll t;
     cin>>t;
     while(t--){
-        ll n,zeros,ones;
-        int i;
+        ll n,i,ones,zeros=0;
         cin>>n;
-        char s[n];
-        char p[n];
+        char s[n+1],p[n+1];        
+        cin>>s;
+        cin>>p;
 
-        fr(i,n){
-            cin>>s[i];
-        }
-        fr(i,n){
-            cin>>p[i];
-        }
-
-        fr(i,n){
+        for(i = 0;i<n;i++){
             if(s[i]!=p[i]){
                 if(s[i]=='0'){
-                    zeros+=1;
+                    zeros++;
                 }else{
-                    ones+=1;
+                    ones++;
                 }
             }
         }
@@ -36,27 +28,24 @@ int main(){
             cout<<"No"<<endl;
             continue;
         }
-
-        int c1=0;
+        int c=0;
         bool flag = true;
-        fr(i,n){
+
+        for(i =0;i<n;i++){
             if(s[i]!=p[i]){
                 if(s[i]=='0'){
-                    if(c1>0){
-                        c1--;
+                    if(c>0){
+                        c--;
                     }else{
                         flag = false;
                         break;
                     }
                 }else{
-                    c1++;
+                    c++;
                 }
             }
         }
-
-        cout<<((!flag)? "No":"Yes")<<endl;
-
+        cout<<((flag)?"Yes":"No")<<endl;
     }
-
-    return 0 ;
+    return 0;
 }

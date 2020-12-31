@@ -1,37 +1,29 @@
 #include<iostream>
 #include<map>
+#include<math.h>
 using namespace std;
 
 int main(){
-    int t=0;
+    int t;
     cin>>t;
     while(t--){
         char s[100000];
+        int len=0;
         cin>>s;
 
-        map<char,int> counter;
-        int n=0;
-
+        map<char,int> freq;
         for(int i = 0;s[i]!='\0';i++){
-            counter[s[i]]++;
-            n++;
+            freq[s[i]]++;
+            len++;
+        }
+        int palin = 0;
+        len/=3;
+        for(auto x:freq){
+            palin+= floor(x.second/2);
         }
 
-        long int cc = 0;
 
-        for(auto x:counter){
-            if(x.second>1){
-                for(int i = 0;i<x.second;i+=2){
-                    if(n-3>0){
-                        cc++;
-                        n-=3;
-                    }
-                }
-            }
-        }
-
-        cout<<cc<<endl;
-
+        cout<<((len>palin)? palin:len)<<endl;
     }
 
     return 0;
