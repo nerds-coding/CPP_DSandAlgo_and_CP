@@ -6,6 +6,15 @@
         "string": "cpp",
         "vector": "cpp",
         "algorithm": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "__functional_03": "cpp",
+        "__mutex_base": "cpp",
+        "memory": "cpp",
+        "__locale": "cpp",
+        "ios": "cpp",
+        "functional": "cpp",
+        "map": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp"
     }
 }
