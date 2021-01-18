@@ -37,6 +37,7 @@ int main(){
         }
 
         int counter=0;
+        
         while(q--){
             ll x = 0;
             cin>>x;

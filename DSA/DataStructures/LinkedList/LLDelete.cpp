@@ -8,44 +8,43 @@ class Node{
 };
 
 void insert(Node* n,int value){
-
     Node* temp = n;
-    while(temp->next){
+    while (temp->next)
+    {
         temp = temp->next;
     }
 
-    Node* new_value = new Node();
-    new_value->data = value;
-    new_value->next = NULL;
+    Node* new_data = new Node();
+    new_data->data = value;
+    new_data->next = NULL;
 
-    temp->next = new_value;
+    temp->next = new_data;
+    
 }
 
 void display(Node* n){
-
     Node* temp = n;
+
     while(temp){
         cout<<temp->data<<endl;
         temp = temp->next;
     }
 }
 
-Node* reverseList(Node* n){
-    if(n == NULL){
-        return NULL;
-    }
-    Node* prev = NULL, *nt = NULL;
-    Node* cur = n;
+void deleteEnd(Node* n){
+    Node* temp =n , *second_last;
 
-    while(cur){
-        nt = cur->next;
-
-        cur->next = prev;
-        prev = cur;
-        cur = nt;
+    while (temp->next)
+    {
+        second_last = temp;
+        temp = temp->next;
     }
 
-    return prev;
+    second_last->next = NULL;
+}
+
+Node* deleteBegin(Node* n){
+    return n->next;
 }
 
 int main(){
@@ -64,9 +63,12 @@ int main(){
     insert(head,8);
     insert(head,9);
 
-    display(reverseList(head));
+    deleteEnd(head);
+    deleteEnd(head);
+    deleteEnd(head);
 
-
+    //deleteBegin(head);
+    display(deleteBegin(head));
 
     return 0;
 }
