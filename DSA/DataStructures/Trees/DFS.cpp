@@ -36,17 +36,18 @@ void inorder(Node* n){
     }
 }
 
-
 void dfs(Node* n){
     if(n){
         vector<Node*> temp;
-        temp.push_back(n);
         vector<Node*> stack;
+        temp.push_back(n);
+
         while (!temp.empty())
         {
             Node* st = temp.front();
             temp.erase(temp.begin()+0);
             stack.push_back(st);
+
             if(st->left){
                 temp.push_back(st->left);
             }
@@ -54,16 +55,13 @@ void dfs(Node* n){
                 temp.push_back(st->right);
             }
         }
-        
-        while (!stack.empty())
-        {
-            Node* st = stack.end();
-            stack.erase(stack.end()+0);
-            cout<<st->data<<" ";
+
+        for(int i = stack.size()-1;i>=0;i--){
+            cout<<stack[i]->data<<" ";
         }
-        
     }
 }
+
 
 
 int main(){
@@ -78,7 +76,7 @@ int main(){
     insert(root,80);
     insert(root,90);
 
-    inorder(root);
+    //inorder(root);
 
     //deleteNode(root,50);
 
