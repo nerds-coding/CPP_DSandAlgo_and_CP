@@ -36,27 +36,26 @@ void inorder(Node* n){
     }
 }
 
-void dfs(Node* n){
-    if(n){
-        vector<Node*> temp;
-        vector<Node*> stack;
-        temp.push_back(n);
-        while (!temp.empty())
-        {
-            Node* st = temp.front();
-            temp.erase(temp.begin()+0);
-            stack.push_back(st);
-            if(st->left){
-                temp.push_back(st->left);
-            }
-            if(st->right){
-                temp.push_back(st->right);
-            }
-        }
-        for(int i = stack.size()-1;i>=0;i--){
-            cout<<stack[i]->data<<" ";
-        }
+struct Node* lca(Node* n,int n1,int n2){
+    if(!n) return NULL;
+
+    if(n->data == n1 || n->data == n2){
+        return n;
     }
+
+    Node* leftVal = lca(n->left,n1,n2);
+    Node* rightVal = lca(n->right,n1,n2);
+
+    if(leftVal && rightVal){
+        return n;
+    }
+
+    // to check if left subtree or right subtree is LCA
+    // n1= 20
+    // n2 = 30 
+    // lca(n1,n2) = n1 || n2 
+    // if n1 is directly connected to n2 or vice-versa
+    return (leftVal!=NULL)?leftVal:rightVal;
 }
 
 
@@ -73,13 +72,10 @@ int main(){
     insert(root,80);
     insert(root,90);
 
-    //inorder(root);
-
-    //deleteNode(root,50);
-
-    dfs(root);
+    cout<<lca(root,10,20)->data<<endl;
 
     //inorder(root);
+
 
     return 0;
 }
