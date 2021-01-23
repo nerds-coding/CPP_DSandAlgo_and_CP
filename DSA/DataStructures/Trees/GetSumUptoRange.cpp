@@ -31,9 +31,26 @@ void updateSegmentTree(int seg[],int arr[],int node,int idx,int val,int l,int r)
     }
 }
 
-// we are only updating the node/root which are associated with idx
-// and after updating the child node 
-// we simply performing the segment tree build function
+
+// start = is staring range for the addition
+// end = end till we want the addition
+
+// l = starting range of the actual array
+// r = end of the actual array
+int getSum(int seg[],int start,int end,int l,int r,int node){
+    if(start<=l && r<=end){// starting and ending of the range for the sum
+    // must lies under the l and r of the array
+        return seg[node];
+    }
+    if(end<l || r<start || l>r){// if the l of the array is greater then the end of the sum range
+    // or vice-versa
+    // then we total out from the range
+        return 0;
+    }
+    int mid = (l+r)/2;
+    return getSum(seg,start,end, l ,mid,node*2)+
+    getSum(seg,start,end,mid+1,r,node*2+1);
+}
 
 
 int main(){
@@ -56,6 +73,9 @@ int main(){
         cout<<x<<" ";
     }
     cout<<endl;
+
+    cout<<getSum(seg,3,4,0,5,1)<<endl;
+
 
     return 0;
 }
