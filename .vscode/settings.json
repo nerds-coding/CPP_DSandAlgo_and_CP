@@ -16,7 +16,8 @@
         "map": "cpp",
         "unordered_map": "cpp",
         "unordered_set": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "iosfwd": "cpp"
     },
     "editor.fontFamily": "Monaco"
 }

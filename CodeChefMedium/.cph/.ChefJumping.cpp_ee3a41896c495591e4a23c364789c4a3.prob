@@ -1,0 +1,1 @@
+{"name":"Local: ChefJumping","url":"/Users/anupprakash/Desktop/Cpp CP/CodeChefMedium/ChefJumping.cpp","tests":[{"id":1611771735067,"input":"0\n1\n2\n3\n6\n7\n10","output":"yes\nyes\nno\nyes\nyes\nyes\nno"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/anupprakash/Desktop/Cpp CP/CodeChefMedium/ChefJumping.cpp","group":"local","local":true}
