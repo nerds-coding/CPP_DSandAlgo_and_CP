@@ -1,0 +1,54 @@
+Compile time polymorphism
+
+The function to be invoked is known at the compile time.
+It is also known as overloading, early binding and static binding
+
+Overloading is a compile time polymorphism where more than one 
+method is having the same name but with the different number of 
+parameters or the type of the parameters.
+
+
+It is achieved by function overloading and operator overloading.
+
+It provides fast execution as it is known at the compile time.
+
+It is less flexible as mainly all the things execute at the compile time.
+
+
+
+-------------------------------- Operator Overloading --------------------------------------
+
+C++ Operators Overloading
+Operator overloading is a compile-time polymorphism in which the operator is overloaded to provide the special meaning to the user-defined data type. Operator overloading is used to overload or redefines most of the operators available in C++. It is used to perform the operation on the user-defined data type. For example, C++ provides the ability to add the variables of the user-defined data type that is applied to the built-in data types.
+
+The advantage of Operators overloading is to perform different operations on the same operand.
+
+Operator that cannot be overloaded are as follows:
+
+Scope operator (::)
+Sizeof
+member selector(.)
+member pointer selector(*)
+ternary operator(?:)
+
+
+Syntax of Operator Overloading
+return_type class_name  : : operator op(argument_list)  
+{  
+     // body of the function.  
+}  
+
+
+Rules for Operator Overloading
+Existing operators can only be overloaded, but the new operators cannot be overloaded.
+
+The overloaded operator contains atleast one operand of the user-defined data type.
+
+We cannot use friend function to overload certain operators. 
+However, the member function can be used to overload those operators.
+
+When unary operators are overloaded through a member function take no explicit arguments, 
+but, if they are overloaded by a friend function, takes one argument.
+
+When binary operators are overloaded through a member function takes one explicit argument, 
+and if they are overloaded through a friend function takes two explicit arguments
