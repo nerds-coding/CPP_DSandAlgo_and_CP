@@ -1,0 +1,1 @@
+{"name":"Local: MakePermutation","url":"/Users/anupprakash/Desktop/Cpp CP/CodeChefMedium/MakePermutation.cpp","tests":[{"id":1612788179977,"input":"2\n4\n1 2 3 3\n3\n2 6 2","output":"1\n2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/anupprakash/Desktop/Cpp CP/CodeChefMedium/MakePermutation.cpp","group":"local","local":true}

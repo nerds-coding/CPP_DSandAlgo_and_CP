@@ -1,0 +1,1 @@
+{"name":"Local: ChefAndSubset","url":"/Users/anupprakash/Desktop/Cpp CP/CodeChefMedium/ChefAndSubset.cpp","tests":[{"id":1613385562650,"input":"3\n1 2 0 3\n1 2 4 -1\n1 2 3 4","output":"Yes\nYes\nNo"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/anupprakash/Desktop/Cpp CP/CodeChefMedium/ChefAndSubset.cpp","group":"local","local":true}
