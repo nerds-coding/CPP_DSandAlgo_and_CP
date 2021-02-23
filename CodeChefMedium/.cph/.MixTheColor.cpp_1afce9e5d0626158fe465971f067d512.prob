@@ -1,0 +1,1 @@
+{"name":"Local: MixTheColor","url":"/Users/anupprakash/Desktop/Cpp CP/CodeChefMedium/MixTheColor.cpp","tests":[{"id":1614016251949,"input":"2\n3\n1 2 3\n3\n2 1 2","output":"0\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/anupprakash/Desktop/Cpp CP/CodeChefMedium/MixTheColor.cpp","group":"local","local":true}

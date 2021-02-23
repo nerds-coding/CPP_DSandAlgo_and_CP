@@ -38,7 +38,7 @@ int main()
     Phone p4(399, "Apple");
 
     cout<<"Total Number Object Creation  "<<Phone::displayStatic()<<"\n";
-    // use can access the Static Member Function/ Variable only using Scope Resolution(::)
+    // we can access the Static Member Function/ Variable only using Scope Resolution(::)
     // Static is independent to object Creation
     return 0;
 }

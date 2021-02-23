@@ -29,6 +29,7 @@ using namespace std;
 #define MP make_pair
 
 ll mod = 1e6 + 1;
+vector<ll> vi;
 pair<ll, ll> pi;
 
 int main()
@@ -43,34 +44,15 @@ int main()
         cin >> n;
 
         ll a[n];
-        vector<ll> vi;
+        set<ll> dist;
 
         FOR(i, n)
         {
-            cin >> a[i];
+            cin>>a[i];
+            dist.insert(a[i]);
         }
 
-        vi.push_back(a[0]);
-
-        for(int i = 1;i<n;i++){
-            int idx = lower_bound(vi.begin(),vi.end(),a[i])-vi.begin();
-
-            if(idx<vi.size())
-                cout<<vi[idx]<<endl;
-            else{
-                cout<<vi[idx-1]<<endl;
-            }
-            vi.push_back(a[i]);
-        }
-
-        FOR(i,vi.size()){
-            if(vi[i])
-                cout<<vi[i];
-        }
-        cout<<endl;
-        cout<<endl;
-
-        vi.clear();
+        cout<<n-dist.size()<<"\n";
     }
     return 0;
 }
