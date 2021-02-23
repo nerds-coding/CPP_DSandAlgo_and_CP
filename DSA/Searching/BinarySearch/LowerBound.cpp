@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(){
-    int arr[] = {1,2,3,4,6,7,8,9};
+    int arr[] = {1,2,3,4,4,4,4,6,7,8,9};
 
     vector<int> v(arr,arr+(sizeof(arr)/sizeof(arr[0])));
 
