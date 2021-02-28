@@ -1,52 +1,114 @@
-#pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
-
-
 #include <iostream>
-#include <cstdio>
-#include <algorithm>
-#include <cmath>
-#include <string>
 #include <vector>
-#include <map>
-#include <unordered_map>
-#include <set>
-#include <unordered_set>
-#include <list>
-using namespace std; 
+using namespace std;
+
+struct Node
+{
+    int data;
+    Node *left;
+    Node *right;
+
+    Node(int val)
+    {
+        data = val;
+        left = NULL;
+        right = NULL;
+    }
+};
+
+struct Node *insert(Node *n, int val)
+{
+    if (n == NULL)
+    {
+        return new Node(val);
+    }
+    else
+    {
+        if (n->data < val)
+        {
+            n->right = insert(n->right, val);
+        }
+        else
+        {
+            n->left = insert(n->left, val);
+        }
+    }
+
+    return n;
+}
+
+void inorder(Node *n)
+{
+    if (n != NULL)
+    {
+        inorder(n->left);
+        cout << n->data << " ";
+        inorder(n->right);
+    }
+}
+
+void BToDLL(Node *root, Node **head_ref)
+{
+    // initially we are checking for the right most bottom node
+    // if we met the end then we will return the last node
+    // start the below procedure
+    if (root == NULL)
+        return;
+
+    BToDLL(root->right, head_ref);
+
+    root->right = *head_ref;
+    // when we met the last bottom right node
+    // obiously the last right of tree will be NULL
+    // so initially the *d value is also NULL
+    // so the last node will point toward the node
+
+    if (*head_ref)
+        (*head_ref)->left = root;
+    // but when we are back tracking when the parent node of subtree encounter
+    // then we will process that node and then we will call the left subtree
+
+    // there we are pointing the last *d's left pointer to n
+
+    *head_ref = root; // now we are defining the *d to node of the tree
+
+    BToDLL(root->left, head_ref);
+}
+
+Node *bToDLL(Node *root)
+{
+    Node *head = NULL;
+    BToDLL(root, &head);
+    return head;
+}
 
 
-#define max(a, b) (a < b ? b : a) 
-#define min(a, b) ((a > b) ? b : a)
-#define FOR(a, c) for (int(a) = 0; (a) < (c); (a)++) 
-#define FORL(a, b, c) for (int(a) = (b); (a) <= (c); (a)++) 
-#define FORR(a, b, c) for (int(a) = (b); (a) >= (c); (a)--) 
-#define INF 1000000000000000003 
-#define ll long long int
-#define F first 
-#define S second 
-#define PB push_back 
-#define POB pop_back 
-#define MP make_pair 
+int main()
+{
+    struct Node *root = new Node(50);
 
-ll mod = 1e6+1;
-vector<ll> vi; 
-pair<ll, ll> pi; 
+    insert(root, 10);
+    insert(root, 20);
+    insert(root, 30);
+    insert(root, 40);
+    insert(root, 60);
+    insert(root, 70);
+    insert(root, 80);
+    insert(root, 90);
 
+    inorder(root);
 
-int main() 
-{ 
-    ios::sync_with_stdio(0); 
-    cin.tie(0); 
-    ll t = 0; 
-    cin >> t; 
-    while (t--) { 
-        ll n=0; 
-        cin >> n; 
-        ll a[n]; 
-        FOR(i, n) 
-        cin >> a[i];
-    } 
+    //deleteNode(root,50);
+
+    Node *d = bToDLL(root);
+
+    while (d)
+    {
+        cout << d->data;
+        d->left = d;
+    }
+
+    //inorder(root);
+
     return 0;
 }

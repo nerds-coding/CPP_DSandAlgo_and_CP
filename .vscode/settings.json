@@ -18,7 +18,13 @@
         "unordered_set": "cpp",
         "numeric": "cpp",
         "iosfwd": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "__bit_reference": "cpp",
+        "__hash_table": "cpp",
+        "__tree": "cpp",
+        "list": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp"
     },
     "editor.fontFamily": "Monaco"
 }
