@@ -13,7 +13,7 @@ struct details
 
 int main(){
 
-    struct details *p; // make pointer p of stuct details data type
+    struct details *p; // make pointer p of struct details data type
 
     p = (struct details *)malloc(5*sizeof(struct details));
 

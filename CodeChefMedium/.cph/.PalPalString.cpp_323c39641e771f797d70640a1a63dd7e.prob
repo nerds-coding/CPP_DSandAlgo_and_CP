@@ -1,0 +1,1 @@
+{"name":"Local: PalPalString","url":"/Users/anupprakash/Desktop/Cpp CP/CodeChefMedium/PalPalString.cpp","tests":[{"id":1614678063982,"input":"3\nacbbbadzdz\nabcd\nxyxyxy","output":"YES\nNO\nYES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/anupprakash/Desktop/Cpp CP/CodeChefMedium/PalPalString.cpp","group":"local","local":true}
