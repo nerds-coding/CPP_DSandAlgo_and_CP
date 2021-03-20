@@ -9,7 +9,7 @@ using namespace std;
 /*
 we will be using  two vector 
 1 -> visited vector to check the current node is visited or not
-2 -> if in the dfs the node are visited to mark the nodes as order = true
+2 -> if in the dfs, the node are visited to mark the nodes of order = true
         so if the node is visited and order == true and again we come to visit the same node
         then its is cycle
 
